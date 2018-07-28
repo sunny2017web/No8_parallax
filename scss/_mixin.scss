@@ -1,0 +1,28 @@
+%clearfix{
+    &:after{
+       content:"";
+       display:block;
+       clear:both;
+    }
+ }
+ %center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+@mixin sizeColor($size, $color, $weight:'normal'){
+    color:$color;
+    line-height: $size+12;
+    font:{
+        size:$size;
+        family:'Roboto', sans-serif;
+        weight:$weight;
+    } 
+}
+@mixin width($width:58%){
+    float:left;
+    width:$width;
+    // padding: 86px 100px 70px;
+    box-sizing: border-box;
+}

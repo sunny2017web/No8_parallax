@@ -1,0 +1,193 @@
+.title{
+    @include sizeColor($titleSize, $whiteColor, bold);
+}
+.subTitle{
+    @include sizeColor($subtitle, $whiteColor, bold);
+    margin: 15px 0;
+}
+.subTitle2{
+    @include sizeColor($subtitle2, $whiteColor);
+}
+.paragraph{
+    list-style: none;
+    width:380px;
+    margin: 40px auto 0;
+    li{
+        border:2px solid $whiteColor;
+        border-radius: 30px;
+        margin: 16px 0;
+        color: $whiteColor;
+        padding: 10px;
+        font-size: $paragraph;
+        text-align: center;
+        cursor: pointer;
+        &:hover{
+            background: $whiteColor;
+            color: $blueColor;
+        }
+    }
+}
+.question{
+    @include sizeColor($titleSize, $pinkColor, bold); 
+}
+.homepage{
+    background: $blueColor;
+    text-align: center;
+    height: 100vh;
+    width:100vw;
+    box-sizing: border-box;
+    
+}
+.text_block{
+    @extend  %center;
+    z-index: 20;
+}
+.star{
+    @extend  %center;
+    z-index: 10;
+    .starTop{
+        position: relative;
+        width:235px;
+        border-top: 135px solid $pinkColor;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        &::before{
+            content: "";
+            position: absolute;
+            top:-195px;
+            left: calc(50% - 40px);
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 60px solid $pinkColor;
+        }
+    }
+    .starBottom{
+        position: relative;
+        width:235px;
+        border-top: 135px solid $pinkColor;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        transform: rotate(180deg);
+        &::before{
+            content: "";
+            position: absolute;
+            top:-195px;
+            left: calc(50% - 40px);
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 60px solid $pinkColor;
+        }
+    }
+}
+.circle{
+    width: 500px;
+    height: 500px;
+    z-index: 9;
+    border-radius: 50%;
+    background: $darkBlueColor;
+    @extend  %center;
+}
+.square{
+    @extend  %center;
+    width: 400px;
+    height: 400px;
+    z-index: 8;
+    background: $blackColor;
+}
+.question1{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: $blueColor;
+    transition: all 0.5s;
+    @extend %clearfix;
+    .left{
+        @include width();
+        opacity: 0;
+        .block{
+            max-width: 380px;
+            margin: 0 auto;
+        }
+    }
+    .right{
+        @include width(42%);
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        background-color:$darkBlueColor;
+        transition: all .3s;
+    }
+}
+.animate_square{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 100vh;
+    left: 50px;
+    background: $pinkColor;
+}
+.animate_triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width:0 70px 120px;
+    border-color:transparent transparent $whiteColor transparent;
+    position: absolute;
+    top:calc(100vh + 100px);
+    right: -20px;
+}
+.animate_circle{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: $blackColor;
+    position: absolute;
+    bottom:-900px;
+    right: -50px;
+}
+.question2{
+    @extend %clearfix;
+    .left{
+        @include width(42%);
+        background-color:$pinkColor;
+    }
+    .right{
+        @include width();
+        background-color:$darkBlueColor;
+    }
+    .subTitle2{
+        color:  $blueColor;
+    }
+}
+.question3{
+    @extend %clearfix;
+    .left{
+        @include width();
+        background-color:$pinkColor;
+    }
+    .question{
+        color: $whiteColor;
+    }
+    .subTitle{
+        color: $blackColor;
+    }
+    .subTitle2{
+        color: $blackColor;
+    }
+    .right{
+        @include width(42%);
+        background-color:$blueColor;
+    }
+}
+.caculating{
+    background: $blueColor;
+    text-align: center;
+    height: 100vh;
+    padding-top: 20%;
+    box-sizing: border-box;
+    .subTitle2{
+        color: $whiteColor;
+    }
+}
